@@ -1,0 +1,180 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #000814;
+    color: #cce6ff;
+}
+
+/* ANIMATIONS */
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 10px #0077ff, 0 0 20px #0077ff; }
+    50% { box-shadow: 0 0 30px #00c3ff, 0 0 60px #00c3ff; }
+    100% { box-shadow: 0 0 10px #0077ff, 0 0 20px #0077ff; }
+}
+
+@keyframes neonHover {
+    0% { box-shadow: 0 0 5px #00c3ff; }
+    50% { box-shadow: 0 0 25px #00c3ff, 0 0 50px #0077ff; }
+    100% { box-shadow: 0 0 5px #00c3ff; }
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #0077ff, #00c3ff);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: glowPulse 3s infinite;
+}
+
+h1 {
+    font-size: 1.8em;
+    color: #e6f7ff;
+    text-shadow: 0 0 10px #00c3ff;
+}
+
+/* SEARCH + DROPDOWN */
+input, select {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: rgba(0,119,255,0.2);
+    color: white;
+}
+
+/* SECTION TITLE */
+.section-header {
+    background: #001d3d;
+    padding: 15px 40px;
+    font-weight: 600;
+}
+
+/* GRID */
+.games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+/* GAME CARD */
+.game-card {
+    background: #001d3d;
+    border: 1px solid #003566;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s ease;
+}
+
+/* IMAGE */
+.game-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* INFO */
+.game-info {
+    padding: 12px;
+}
+
+.game-info h3 {
+    font-size: 0.95em;
+    margin-bottom: 8px;
+}
+
+/* BUTTON */
+.game-btn {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: #0077ff;
+    color: white;
+    cursor: pointer;
+    animation: glowPulse 2.5s infinite;
+}
+
+/* HOVER EFFECTS */
+.game-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: #00c3ff;
+    animation: neonHover 0.8s infinite;
+}
+
+.game-btn:hover {
+    background: #00c3ff;
+    animation: neonHover 0.8s infinite;
+}
+
+/* VIEWER */
+#gameViewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000814;
+    display: none;
+    flex-direction: column;
+}
+
+#gameViewer.active {
+    display: flex;
+}
+
+/* VIEWER HEADER */
+.viewer-header {
+    background: #001d3d;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.viewer-controls button {
+    background: #0077ff;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    cursor: pointer;
+}
+
+.viewer-controls button:hover {
+    background: #00c3ff;
+}
+
+/* IFRAME */
+#gameFrame {
+    flex: 1;
+    border: none;
+}
+
+/* FOOTER */
+footer {
+    background: #001d3d;
+    padding: 20px;
+    text-align: center;
+}
+
+footer button {
+    background: rgba(0,153,255,0.2);
+    border: 1px solid rgba(0,153,255,0.5);
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background: rgba(0,153,255,0.4);
+}
+
+/* REMOVE SETTINGS BUTTON */
+.settings-btn {
+    display: none;
+}
